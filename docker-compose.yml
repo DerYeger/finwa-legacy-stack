@@ -4,8 +4,9 @@ services:
   finwa-backend:
     image: deryeger/finwa-backend
     env_file:
-      - ./docker/environments/domain.env
-      - ./docker/environments/finwa.env
+      - ./docker/environment/finwa.env
+    ports:
+      - 8080:8080
     depends_on:
       - mongo
     restart: unless-stopped
@@ -13,24 +14,6 @@ services:
       - finwa-network
   mongo:
     image: mongo
-    restart: unless-stopped
-    networks:
-      - finwa-network
-  letsencrypt:
-    image: linuxserver/swag
-    cap_add:
-      - NET_ADMIN
-    env_file:
-      - ./docker/environments/domain.env
-      - ./docker/environments/letsencrypt.env
-    ports:
-      - 443:443
-      - 80:80
-    volumes:
-      - type: bind
-        source: ./docker/nginx/finwa.subfolder.conf
-        target: /config/nginx/proxy-confs/finwa.subfolder.conf
-        read_only: true
     restart: unless-stopped
     networks:
       - finwa-network
