@@ -2,6 +2,10 @@
 
 The `docker-compose` stack of the [FinWa-Backend](https://github.com/DerYeger/finwa).
 
+## Notice
+
+This project has been abandoned and replaced by https://github.com/DerYeger/finwa.
+
 ## Deployment
 
 - Change the URL parameter in `./docker/environments/domain.env`.
