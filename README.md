@@ -1,6 +1,6 @@
 # FinWa-Stack
 
-The `docker-compose` stack of the [FinWa-Backend](https://github.com/DerYeger/finwa).
+The `docker-compose` stack of the [FinWa-Backend](https://github.com/DerYeger/finwa-legacy).
 
 ## Notice
 
